@@ -1,61 +1,25 @@
-# Divvy trip analysis
+# Divvy BikeShare Demand Predictor
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+## Overview
+This GitHub repository contains a machine learning project focused on predicting the total daily demand for Divvy bikes in Chicago. Utilizing time series forecasting techniques, the project implements two neural network models: a standard Long Short-Term Memory (LSTM) network and a Bidirectional LSTM (BiLSTM) network. These models analyze historical bike rental data to forecast future demand, helping optimize bike availability and urban planning.
 
-We perform EDA to look for patterns in the usage of Chicago's bicycle and scooter system, Divvy, and train an LSTM model to predict variables such as the demand at a given station.
+The dataset is sourced from Divvy's public trip data, incorporating features like weather conditions, holidays, and temporal patterns to improve prediction accuracy.
 
-## Project Organization
+## Key Features
+- **Data Preprocessing**: Cleaning and feature engineering of Divvy trip data, including aggregation to hourly totals and integration of external factors (e.g., temperature, precipitation).
+- **Models Implemented**:
+  - **LSTM**: A recurrent neural network designed for sequential data, capturing long-term dependencies in bike demand patterns.
+  - **Bidirectional LSTM**: An enhanced version that processes data in both forward and backward directions, potentially improving context understanding for better forecasts.
+- **Evaluation Metric**: Models are assessed using Mean Squared Error (MSE).
+- **Visualization**: Plots for actual vs. predicted demand using Matplotlib.
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         divvy_trip_analysis and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── divvy_trip_analysis   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes divvy_trip_analysis a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+## Technologies Used
+- Python 3.x
+- Pytorch for model building
+- Pandas and NumPy for data manipulation
+- Scikit-learn for preprocessing and evaluation
+- Jupyter Notebook for exploratory analysis
 
---------
-
+## Results
+- **LSTM Performance**: Achieved an MSE of 0.004659 on test data.
+- **BiLSTM Performance**: Improved to an MSE of 0.004387 on test data, possibly showing better handling of seasonal trends.
