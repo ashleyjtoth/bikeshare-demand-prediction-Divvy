@@ -14,7 +14,7 @@ The dataset is sourced from Divvy's public trip data, incorporating features lik
 - **Visualization**: Plots for actual vs. predicted demand using Matplotlib.
 
 ## Technologies Used
-- Python 3.x
+- Python 3.12.7
 - Pytorch for model building
 - Pandas and NumPy for data manipulation
 - Scikit-learn for preprocessing and evaluation
