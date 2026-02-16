@@ -21,5 +21,5 @@ The dataset is sourced from Divvy's public trip data, incorporating features lik
 - Jupyter Notebook for exploratory analysis
 
 ## Results
-- **LSTM Performance**: Achieved an MSE of 0.004659 on test data.
-- **BiLSTM Performance**: Improved to an MSE of 0.004387 on test data, possibly showing better handling of seasonal trends.
+- **LSTM Performance**: Achieved an MAE of 69.1964 rentals on test data.
+- **BiLSTM Performance**: Improved to an MSE of 66.4501, possibly showing better handling of seasonal trends.
